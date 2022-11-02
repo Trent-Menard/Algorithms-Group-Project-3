@@ -13,7 +13,6 @@ import networkx as nx
 import numpy as np
 
 # Use same seed for each generation (don't randomize)
-# random.seed(seed)
 seed = 4
 np.random.seed(seed)
 
@@ -30,5 +29,20 @@ nx.add_path(G, "DGJI")
 nx.add_cycle(G, "HKL")
 G.add_edge("K","O")
 G.add_edge("L", "P")
+
+DFS_res = list(nx.dfs_edges(G))
+print("DFS Results:")
+print(DFS_res)
+print()
+
+BFS_res = list(nx.bfs_edges(G, source="A"))
+print("BFS Results:")
+print(BFS_res)
+print()
+
+print("Shortest Paths:")
+shortest_paths = list(nx.shortest_simple_paths(G, source="A", target="B", ))
+for x in shortest_paths:
+    print(x)
 
 nx.draw(G, with_labels=True, node_size=500, width=3, font_weight="bold", font_family="Times New Roman")

@@ -9,7 +9,11 @@ Created on Tue Nov  1 21:33:32 2022
 
 import networkx as nx
 import matplotlib.pyplot as plt
+import numpy as np
 
+# Use same seed for each generation (don't randomize)
+seed = 4
+np.random.seed(seed)
 
 G = nx.DiGraph()
 #setting the edges of the graph
