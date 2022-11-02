@@ -34,7 +34,7 @@ G.add_edges_from([ ('7', '10'), ('10', '11'), ('11', '12')])
 
 #displaying the graph
 pos = nx.spring_layout(G)
-nx.draw_networkx_nodes(G, pos, node_size=400)
+nx.draw_networkx_nodes(G, pos, node_size=200)
 nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='black')
 nx.draw_networkx_labels(G, pos)
 plt.show()
