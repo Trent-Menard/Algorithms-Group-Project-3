@@ -30,18 +30,23 @@ nx.add_cycle(G, "HKL")
 G.add_edge("K","O")
 G.add_edge("L", "P")
 
-DFS_res = list(nx.dfs_edges(G))
-print("DFS Results:")
+print()
+
+# Perform DFS Traversal over edges from NetworkX
+DFS_res = list(nx.edge_dfs(G))
+print("DFS Results: " + str(len(DFS_res)) + " edges")
 print(DFS_res)
 print()
 
-BFS_res = list(nx.bfs_edges(G, source="A"))
-print("BFS Results:")
+# Perform BFS Traversal over edges from NetworkX
+BFS_res = list(nx.edge_bfs(G, source="A"))
+print("BFS Results: " + str(len(BFS_res)) + " edges")
 print(BFS_res)
+print()
 print()
 
 print("Shortest Paths:")
-shortest_paths = list(nx.shortest_simple_paths(G, source="A", target="B", ))
+shortest_paths = list(nx.shortest_simple_paths(G, source="A", target="B"))
 for x in shortest_paths:
     print(x)
 
